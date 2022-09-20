@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
-
+    private Animator _animator;
 
 
     private float _speed;
@@ -36,6 +36,7 @@ public class player : MonoBehaviour
     private void Start()
     {
         //SetActiveWeapon(0);
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,12 +47,6 @@ public class player : MonoBehaviour
     {
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
         
-
-        if (_isGrounded && velocity.y < 0f)
-        {
-            velocity.y = -2f;
-            gravity = -10f;
-        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -67,6 +62,11 @@ public class player : MonoBehaviour
 
         _controller.Move(move * _speed * Time.deltaTime);
 
+        if (_isGrounded && velocity.y < 0f)
+        {
+            velocity.y = -2f;
+            gravity = -10f;
+        }
         if (Input.GetKey(KeyCode.Space) && _isGrounded)
         {
             velocity.y = Mathf.Sqrt(_jumpHeight * -2f * gravity);
@@ -74,9 +74,8 @@ public class player : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime);
-
-        
     }
+    
     /*public void TakeDamage(int damage)
     {
         _health.ApplyChange(-damage);

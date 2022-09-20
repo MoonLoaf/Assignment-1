@@ -13,7 +13,7 @@ public class CharacterManager : MonoBehaviour
     private float _randomZ;
     [SerializeField] private float _spawnHeight;
 
-    private void init()
+    public void init()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
@@ -26,8 +26,8 @@ public class CharacterManager : MonoBehaviour
     }
     private void GenerateSpawnPoint()
     {
-        _randomX = Random.Range(1, 10);
-        _randomZ = Random.Range(1, 10);
+        _randomX = Random.Range(-50, 20);
+        _randomZ = Random.Range(0, 65);
 
         _spawnPoint = new Vector3(_randomX, _spawnHeight, _randomZ);
     }
