@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Main Menu Settings")]
 
-    [Range(1, 4)]
+    [Range(2, 4)]
     public int playerCount;
 
     [Range(1, 6)]

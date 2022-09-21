@@ -13,33 +13,30 @@ public class CharacterManager : MonoBehaviour
     private float _randomZ;
     [SerializeField] private float _spawnHeight;
 
+    public List<GameObject> Team1;
+    public List<GameObject> Team2;
+    public List<GameObject> Team3;  
+    public List<GameObject> Team4;
+
     public void init()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
-        for (int i = 0; i < gameManager.playerCount-1; i++)
+
+        for (int i = 0; i < gameManager.playerCount * gameManager.characterPerPlayer; i++)
         {
-            List<GameObject> Team = new List<GameObject>();
-            Debug.Log("");
+            GenerateSpawnPoint();
+            Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
+            Team1.Add(playerCharacter);
 
-            Team.Capacity = gameManager.characterPerPlayer;
-
-            for (int j = 0; i < gameManager.playerCount * gameManager.characterPerPlayer; j++)
+            Debug.Log(Team1.Count);
+            if (Team1.Count >= gameManager.characterPerPlayer)
             {
-                GenerateSpawnPoint();
-                Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-
-                Team.Add(playerCharacter);
-                Debug.Log(Team.Count);
-
-                //foreach (GameObject playerCharacter in Team)
-                {
-                    //GenerateSpawnPoint();
-                    //Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-                    //Debug.Log(_spawnPoint);
-                }
+                Team2.Add(playerCharacter);
             }
         }
+
+
     }
     private void GenerateSpawnPoint()
     {
