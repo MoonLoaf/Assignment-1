@@ -17,11 +17,28 @@ public class CharacterManager : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
-        for (int i  = 0; i < gameManager.playerCount * gameManager.characterPerPlayer; i++)
+        for (int i = 0; i < gameManager.playerCount-1; i++)
         {
-            GenerateSpawnPoint();
-            Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-            Debug.Log(_spawnPoint);
+            List<GameObject> Team = new List<GameObject>();
+            Debug.Log("");
+
+            Team.Capacity = gameManager.characterPerPlayer;
+
+            for (int j = 0; i < gameManager.playerCount * gameManager.characterPerPlayer; j++)
+            {
+                GenerateSpawnPoint();
+                Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
+
+                Team.Add(playerCharacter);
+                Debug.Log(Team.Count);
+
+                //foreach (GameObject playerCharacter in Team)
+                {
+                    //GenerateSpawnPoint();
+                    //Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
+                    //Debug.Log(_spawnPoint);
+                }
+            }
         }
     }
     private void GenerateSpawnPoint()
