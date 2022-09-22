@@ -20,8 +20,6 @@ public class CharacterManager : MonoBehaviour
     public List<GameObject> Team3;  
     public List<GameObject> Team4;
 
-    public List<GameObject>[] teamArray;
-
     public void init()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -62,23 +60,6 @@ public class CharacterManager : MonoBehaviour
                 Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
                 Team4.Add(playerCharacter);
             }
-        }
-
-        if (Team1.Count != 0)
-        {
-            Team1 = teamArray[0];
-        }
-        if (Team2.Count != 0)
-        {
-            Team2 = teamArray[1];
-        }
-        if (Team3.Count != 0)
-        {
-            Team3 = teamArray[2];
-        }
-        if (Team4.Count != 0)
-        {
-            Team4 = teamArray[3];
         }
 
         CameraInit.Raise();

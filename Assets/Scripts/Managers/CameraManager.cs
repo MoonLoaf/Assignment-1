@@ -12,20 +12,19 @@ public class CameraManager : MonoBehaviour
     public int currentTeam;
 
     public List<Camera> team1cameras;
-    
+
 
 
 
     void Start()
     {
-        characterManager = FindObjectOfType<CameraManager>().GetComponent<CharacterManager>();
+        characterManager = FindObjectOfType<CharacterManager>().GetComponent<CharacterManager>();
     }
     public void init()
     {
-        foreach (List<GameObject> teamLists in characterManager.teamArray)
+        foreach (GameObject playerCharacter in characterManager.Team1)
         {
-            teamLists.ForEach(t => gameObject.GetComponent<Camera>());
-            
+            team1cameras.Add(playerCharacter.GetComponent<Camera>());
         }
     }
 
