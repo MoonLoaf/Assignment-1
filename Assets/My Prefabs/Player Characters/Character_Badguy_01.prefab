@@ -887,8 +887,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8779307230157162815}
   - component: {fileID: 8688170126163102787}
-  - component: {fileID: 3019916592057834364}
   - component: {fileID: 469903639422152014}
+  - component: {fileID: 3019916592057834364}
   - component: {fileID: 8669393672782164982}
   - component: {fileID: -5553134545396345820}
   m_Layer: 0
@@ -945,6 +945,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!143 &469903639422152014
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773213381141393307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.84
+  m_Radius: 0.29
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!114 &3019916592057834364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,24 +987,6 @@ MonoBehaviour:
   RPG: {fileID: 0}
   Shotgun: {fileID: 0}
   Rifle: {fileID: 0}
---- !u!143 &469903639422152014
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8773213381141393307}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.84
-  m_Radius: 0.29
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!114 &8669393672782164982
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PlayerCam : MonoBehaviour
     public bool autoLockCursor;
     public Transform rotationTransform;
 
-    [SerializeField]private Camera cam;
+    public Camera cam;
 
     void Awake()
     {

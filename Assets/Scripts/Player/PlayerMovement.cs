@@ -76,17 +76,6 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(velocity * Time.deltaTime);
     }
     
-    /*public void TakeDamage(int damage)
-    {
-        _health.ApplyChange(-damage);
-        OnHealthChange.Raise();
-    }
-    public void FillHP(float HP)
-    {
-        _health.ApplyChange(HP);
-        OnHealthChange.Raise();
-
-    }*/
     /*public void SetActiveWeapon(int weaponIndex)
     {
         if (weaponIndex == 1)

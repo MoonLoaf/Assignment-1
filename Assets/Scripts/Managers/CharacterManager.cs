@@ -17,13 +17,17 @@ public class CharacterManager : MonoBehaviour
 
     public List<GameObject> Team1;
     public List<GameObject> Team2;
-    public List<GameObject> Team3;  
+    public List<GameObject> Team3;
     public List<GameObject> Team4;
+
+    public List<GameObject>[] teamArray;
+    public int teamArrayIndex;
 
     public void init()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
+        teamArray = new List<GameObject>[gameManager.playerCount];
 
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {
@@ -61,6 +65,24 @@ public class CharacterManager : MonoBehaviour
                 Team4.Add(playerCharacter);
             }
         }
+
+        if (Team1.Count != 0)
+        {
+            teamArray[0] = Team1;
+        }
+        if (Team2.Count != 0)
+        {
+            teamArray[1] = Team2;
+        }
+        if (Team3.Count != 0)
+        {
+            teamArray[2] = Team3;
+        }
+        if (Team4.Count != 0)
+        {
+            teamArray[3] = Team4; 
+        }
+
 
         CameraInit.Raise();
     }
