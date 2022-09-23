@@ -83,7 +83,6 @@ public class CharacterManager : MonoBehaviour
             teamArray[3] = Team4; 
         }
 
-
         CameraInit.Raise();
     }
     private void GenerateSpawnPoint()

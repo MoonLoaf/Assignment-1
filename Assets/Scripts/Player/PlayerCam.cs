@@ -12,9 +12,10 @@ public class PlayerCam : MonoBehaviour
 
     public Camera cam;
 
-    void Awake()
+    void Start()
     {
-        this.gameObject.GetComponentInChildren<Camera>();
+        cam = this.gameObject.GetComponentInChildren<Camera>();
+        cam.enabled = false;
         Cursor.lockState = (autoLockCursor) ? CursorLockMode.Locked : CursorLockMode.None;
     }
 

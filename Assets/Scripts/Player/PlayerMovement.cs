@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
-    private Animator _animator;
-
 
     private float _speed;
     public float gravity;
@@ -36,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         //SetActiveWeapon(0);
-        _animator = GetComponent<Animator>();
     }
 
     private void Update()

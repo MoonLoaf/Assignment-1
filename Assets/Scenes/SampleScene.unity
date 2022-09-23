@@ -2650,7 +2650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onGameStart: {fileID: 11400000, guid: 206e05772576432458444c47f3dcb161, type: 2}
   playerCount: 2
-  characterPerPlayer: 4
+  characterPerPlayer: 1
 --- !u!4 &871298371
 Transform:
   m_ObjectHideFlags: 0
@@ -2879,6 +2879,7 @@ GameObject:
   - component: {fileID: 948554508}
   - component: {fileID: 948554507}
   - component: {fileID: 948554509}
+  - component: {fileID: 948554510}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -2898,10 +2899,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b473a02062965f342a2cc46afdc8d5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onEndTurn: {fileID: 0}
   currentCamera: {fileID: 0}
   previousCamera: {fileID: 0}
   currentTeam: 0
-  team1cameras: []
+  team1Cameras: []
+  team2Cameras: []
+  team3Cameras: []
+  team4Cameras: []
 --- !u!4 &948554508
 Transform:
   m_ObjectHideFlags: 0
@@ -2936,6 +2941,34 @@ MonoBehaviour:
       - m_Target: {fileID: 948554507}
         m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
         m_MethodName: init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &948554510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948554506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756a97af9dc157f4a9716981d397c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 3fe3977685ef356439d6137d90d95a92, type: 2}
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 948554507}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: NextTeam
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6192,6 +6225,7 @@ MonoBehaviour:
   Team2: []
   Team3: []
   Team4: []
+  teamArrayIndex: 0
 --- !u!4 &2043888037
 Transform:
   m_ObjectHideFlags: 0
