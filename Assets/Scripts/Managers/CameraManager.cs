@@ -9,11 +9,11 @@ public class CameraManager : MonoBehaviour
     CharacterManager characterManager;
     public VoidEvent onEndTurn;
 
-    public Camera currentCamera;
-    public Camera previousCamera;
+    public GameObject currentCamera;
+    public GameObject previousCamera;
 
-    public int currentTeam;
     private int CameraArrayIndex = 0;
+    public GameObject activePlayer;
 
     public List<Camera> team1Cameras;
     public List<Camera> team2Cameras;
@@ -22,9 +22,14 @@ public class CameraManager : MonoBehaviour
 
     public List<Camera>[] CameraArray;
 
+    [SerializeField] private int teamSwitchIndex;
+    [SerializeField] private int characterSwitchIndex;
+
     void Start()
     {
         characterManager = FindObjectOfType<CharacterManager>().GetComponent<CharacterManager>();
+        teamSwitchIndex = 0;
+        characterSwitchIndex = 0;
     }
     public void init()
     {
@@ -55,23 +60,42 @@ public class CameraManager : MonoBehaviour
     }
     public void NextTeam()
     {
+        teamSwitchIndex++;
 
+        if (teamSwitchIndex > CameraArray.Length)
+        {
+            teamSwitchIndex = 0;
+        }
     }
     public void CameraSwitch()
     {
-        Debug.Log(team1Cameras[0].enabled);
-        team1Cameras[0].enabled = true;
+        currentCamera = characterManager.teamArray[teamSwitchIndex][characterSwitchIndex];
+
+        currentCamera.gameObject.GetComponent<ActivePlayer>().isActive = true;
+        previousCamera = characterManager.teamArray[teamSwitchIndex][characterSwitchIndex - 1];
+        if (characterSwitchIndex == 0)
+        {
+            previousCamera = null;
+        }
+        previousCamera.gameObject.GetComponent<ActivePlayer>().isActive = false;
+
+        characterSwitchIndex++;
+
+        if (characterSwitchIndex >= characterManager.teamArray[teamSwitchIndex].Count)
+        {
+            characterSwitchIndex = 0;
+        }
+        Debug.Log(characterSwitchIndex);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             CameraSwitch();
-            Debug.Log("CameraSwitch");
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            //CurrentCamera --;
+            NextTeam();
         }
 ;
     }

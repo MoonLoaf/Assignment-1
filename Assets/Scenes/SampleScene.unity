@@ -2649,8 +2649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onGameStart: {fileID: 11400000, guid: 206e05772576432458444c47f3dcb161, type: 2}
-  playerCount: 2
-  characterPerPlayer: 1
+  playerCount: 4
+  characterPerPlayer: 3
 --- !u!4 &871298371
 Transform:
   m_ObjectHideFlags: 0
@@ -2899,14 +2899,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b473a02062965f342a2cc46afdc8d5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onEndTurn: {fileID: 0}
+  onEndTurn: {fileID: 11400000, guid: 3fe3977685ef356439d6137d90d95a92, type: 2}
   currentCamera: {fileID: 0}
   previousCamera: {fileID: 0}
-  currentTeam: 0
+  activePlayer: {fileID: 0}
   team1Cameras: []
   team2Cameras: []
   team3Cameras: []
   team4Cameras: []
+  teamSwitchIndex: 0
+  characterSwitchIndex: 0
 --- !u!4 &948554508
 Transform:
   m_ObjectHideFlags: 0

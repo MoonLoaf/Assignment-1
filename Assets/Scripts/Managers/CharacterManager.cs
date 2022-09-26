@@ -32,22 +32,20 @@ public class CharacterManager : MonoBehaviour
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-            Team1.Add(playerCharacter);
+            Team1.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
         }
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-            Team2.Add(playerCharacter);
+            Team2.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
+            
         }
         if (gameManager.playerCount == 3)
         {
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-                Team3.Add(playerCharacter);
+                Team3.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
             }
         }
         if (gameManager.playerCount == 4)
@@ -55,14 +53,12 @@ public class CharacterManager : MonoBehaviour
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-                Team3.Add(playerCharacter);
+                Team3.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
             }
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Instantiate(playerCharacter, _spawnPoint, Quaternion.identity);
-                Team4.Add(playerCharacter);
+                Team4.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
             }
         }
 
