@@ -8,8 +8,19 @@ public class CharacterManager : MonoBehaviour
     public VoidEvent CameraInit;
     
     GameManager gameManager;
-    public GameObject playerCharacter;
     private Vector3 _spawnPoint;
+
+    //Playable Characters
+
+    List<GameObject> characterPrefabList = new List<GameObject>();
+    public GameObject characterPrefab1;
+    public GameObject characterPrefab2;
+    public GameObject characterPrefab3;
+    public GameObject characterPrefab4;
+    public GameObject characterPrefab5;
+    public GameObject characterPrefab6;
+    public GameObject characterPrefab7;
+
 
     private float _randomX;
     private float _randomZ;
@@ -29,6 +40,14 @@ public class CharacterManager : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
+        characterPrefabList.Add(characterPrefab1);
+        characterPrefabList.Add(characterPrefab2);
+        characterPrefabList.Add(characterPrefab3);
+        characterPrefabList.Add(characterPrefab4);
+        characterPrefabList.Add(characterPrefab5);
+        characterPrefabList.Add(characterPrefab6);
+        characterPrefabList.Add(characterPrefab7);
+
         teamArray = new List<GameObject>[gameManager.playerCount];
 
         maxCharacterValue = gameManager.characterPerPlayer -1;
@@ -37,20 +56,23 @@ public class CharacterManager : MonoBehaviour
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            Team1.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
+            int prefabIndex = Random.Range(0, 6);
+            Team1.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
         }
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            Team2.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
-            
+            int prefabIndex = Random.Range(0, 6);
+            Team2.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+
         }
         if (gameManager.playerCount == 3)
         {
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Team3.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
+                int prefabIndex = Random.Range(0, 6);
+                Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
         if (gameManager.playerCount == 4)
@@ -58,12 +80,14 @@ public class CharacterManager : MonoBehaviour
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Team3.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
+                int prefabIndex = Random.Range(0, 6);
+                Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
             for (int i = 0; i < gameManager.characterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                Team4.Add(Instantiate(playerCharacter, _spawnPoint, Quaternion.identity));
+                int prefabIndex = Random.Range(0, 6);
+                Team4.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
 

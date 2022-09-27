@@ -7,6 +7,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     CharacterManager characterManager;
+
     public VoidEvent onEndTurn;
 
     public GameObject currentCamera;
@@ -98,6 +99,7 @@ public class CameraManager : MonoBehaviour
         }
         
         previousCamera.gameObject.GetComponent<ActivePlayer>().isActive = false;
+        previousCamera.gameObject.GetComponent<Animator>().SetBool("Ismoving", false);
 
         characterSwitchIndex++;
 
