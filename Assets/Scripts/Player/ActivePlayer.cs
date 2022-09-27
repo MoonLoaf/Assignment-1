@@ -8,13 +8,13 @@ public class ActivePlayer : MonoBehaviour
     PlayerCam camScript;
     PlayerAnimation animScript;
 
-    public bool isActive;
+    public bool isActive = true;
 
     private Camera cam;
 
     void Start()
     {
-        isActive = false;
+        Invoke("SetInactive", 2.5f);
 
         movementScript = GetComponent<PlayerMovement>();
         camScript = GetComponent<PlayerCam>();
@@ -40,5 +40,9 @@ public class ActivePlayer : MonoBehaviour
             this.animScript.enabled = true;
             cam.enabled = true;
         }
+    }
+    public void SetInactive()
+    {
+        isActive = false;
     }
 }

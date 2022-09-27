@@ -22,12 +22,17 @@ public class CharacterManager : MonoBehaviour
 
     public List<GameObject>[] teamArray;
     public int teamArrayIndex;
+    public int maxCharacterValue;
+    public int maxPlayerValue;
 
     public void init()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
         teamArray = new List<GameObject>[gameManager.playerCount];
+
+        maxCharacterValue = gameManager.characterPerPlayer -1;
+        maxPlayerValue = gameManager.playerCount -1;
 
         for (int i = 0; i < gameManager.characterPerPlayer; i++)
         {

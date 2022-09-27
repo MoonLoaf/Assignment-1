@@ -13,7 +13,6 @@ public class CameraManager : MonoBehaviour
     public GameObject previousCamera;
 
     private int CameraArrayIndex = 0;
-    public GameObject activePlayer;
 
     public List<Camera> team1Cameras;
     public List<Camera> team2Cameras;
@@ -48,7 +47,6 @@ public class CameraManager : MonoBehaviour
             CameraArray[3] = team4Cameras;
         }
 
-        Debug.Log(characterManager.teamArray.Length);
         foreach (List<GameObject> teamlists in characterManager.teamArray)
         {
             foreach (GameObject playerCharacter in characterManager.teamArray[CameraArrayIndex])
@@ -62,9 +60,26 @@ public class CameraManager : MonoBehaviour
     {
         teamSwitchIndex++;
 
-        if (teamSwitchIndex > CameraArray.Length)
+        if (teamSwitchIndex == characterManager.teamArray.Length)
         {
             teamSwitchIndex = 0;
+        }
+
+        CameraSwitch();
+
+        if (teamSwitchIndex == 0)
+        {
+            foreach (GameObject playerCharacter in characterManager.teamArray[characterManager.maxPlayerValue])
+            {
+                playerCharacter.GetComponent<ActivePlayer>().isActive = false;
+            }
+        }
+        else 
+        {
+            foreach (GameObject playerCharacter in characterManager.teamArray[teamSwitchIndex -1])
+            {
+                playerCharacter.GetComponent<ActivePlayer>().isActive = false;
+            }
         }
     }
     public void CameraSwitch()
@@ -72,11 +87,16 @@ public class CameraManager : MonoBehaviour
         currentCamera = characterManager.teamArray[teamSwitchIndex][characterSwitchIndex];
 
         currentCamera.gameObject.GetComponent<ActivePlayer>().isActive = true;
-        previousCamera = characterManager.teamArray[teamSwitchIndex][characterSwitchIndex - 1];
-        if (characterSwitchIndex == 0)
+        
+        if (currentCamera == characterManager.teamArray[teamSwitchIndex][0])
         {
-            previousCamera = null;
+            previousCamera = characterManager.teamArray[teamSwitchIndex][characterManager.maxCharacterValue];
         }
+        else
+        {
+            previousCamera = characterManager.teamArray[teamSwitchIndex][characterSwitchIndex - 1];
+        }
+        
         previousCamera.gameObject.GetComponent<ActivePlayer>().isActive = false;
 
         characterSwitchIndex++;
@@ -85,7 +105,6 @@ public class CameraManager : MonoBehaviour
         {
             characterSwitchIndex = 0;
         }
-        Debug.Log(characterSwitchIndex);
     }
     void Update()
     {
@@ -93,7 +112,7 @@ public class CameraManager : MonoBehaviour
         {
             CameraSwitch();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             NextTeam();
         }
