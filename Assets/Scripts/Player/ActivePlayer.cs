@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActivePlayer : MonoBehaviour
 {
+    CameraManager cameraManager;
+
     PlayerMovement movementScript;
     PlayerCam camScript;
     PlayerAnimation animScript;
@@ -14,6 +16,8 @@ public class ActivePlayer : MonoBehaviour
 
     void Start()
     {
+        cameraManager = FindObjectOfType<CameraManager>().GetComponent<CameraManager>();
+
         Invoke("SetInactive", 2.5f);
 
         movementScript = GetComponent<PlayerMovement>();
@@ -44,5 +48,6 @@ public class ActivePlayer : MonoBehaviour
     public void SetInactive()
     {
         isActive = false;
+        cameraManager.CameraSwitch();
     }
 }

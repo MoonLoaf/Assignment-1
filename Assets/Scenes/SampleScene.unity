@@ -430,7 +430,7 @@ Transform:
   - {fileID: 119309765}
   - {fileID: 254207310}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &49682573
 PrefabInstance:
@@ -2342,7 +2342,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3523,7 +3523,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &596991951
 PrefabInstance:
@@ -4256,7 +4256,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &760492000
 PrefabInstance:
@@ -4764,8 +4764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onGameStart: {fileID: 11400000, guid: 206e05772576432458444c47f3dcb161, type: 2}
-  playerCount: 2
-  characterPerPlayer: 4
+  playerCount: 4
+  characterPerPlayer: 6
 --- !u!4 &871298371
 Transform:
   m_ObjectHideFlags: 0
@@ -4779,7 +4779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &875349124 stripped
 Transform:
@@ -5279,7 +5279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &948554509
 MonoBehaviour:
@@ -9045,6 +9045,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4346565836884282, guid: fe6cc77126dfa374883d81c5f9425ff1, type: 3}
   m_PrefabInstance: {fileID: 329108151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1700228795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700228798}
+  - component: {fileID: 1700228797}
+  - component: {fileID: 1700228796}
+  m_Layer: 0
+  m_Name: CharacterUImanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1700228796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700228795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756a97af9dc157f4a9716981d397c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 44acf067ee0e72f4a889fbe31a51db72, type: 2}
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1700228797}
+        m_TargetAssemblyTypeName: CharacterUImanager, Assembly-CSharp
+        m_MethodName: init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1700228797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700228795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b32e2db344fc7f45b4e31604a84c2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1700228798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700228795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1709137564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11440,6 +11513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraInit: {fileID: 11400000, guid: a04eb01df9c5d0341a59f9696d2b0b85, type: 2}
+  CharacterUIinit: {fileID: 11400000, guid: 44acf067ee0e72f4a889fbe31a51db72, type: 2}
   characterPrefab1: {fileID: 8773213381141393307, guid: f3ebb4d3c45a16c47b7f28b6964b21e0, type: 3}
   characterPrefab2: {fileID: 1214723647702548, guid: d0b3d43143a33094c85e22ed32a4f684, type: 3}
   characterPrefab3: {fileID: 1800371080893130, guid: 38e193d939ab72a43adb956ffdb9aee0, type: 3}
@@ -11453,8 +11527,6 @@ MonoBehaviour:
   Team3: []
   Team4: []
   teamArrayIndex: 0
-  maxCharacterValue: 0
-  maxPlayerValue: 0
 --- !u!4 &2043888037
 Transform:
   m_ObjectHideFlags: 0
@@ -11468,7 +11540,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2043888038
 MonoBehaviour:

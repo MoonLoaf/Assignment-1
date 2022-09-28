@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    GameManager gameManager;
     CharacterManager characterManager;
+   
 
     public VoidEvent onEndTurn;
 
@@ -28,6 +31,7 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         characterManager = FindObjectOfType<CharacterManager>().GetComponent<CharacterManager>();
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         teamSwitchIndex = 0;
         characterSwitchIndex = 0;
     }
@@ -70,7 +74,7 @@ public class CameraManager : MonoBehaviour
 
         if (teamSwitchIndex == 0)
         {
-            foreach (GameObject playerCharacter in characterManager.teamArray[characterManager.maxPlayerValue])
+            foreach (GameObject playerCharacter in characterManager.teamArray[gameManager.playerCount -1])
             {
                 playerCharacter.GetComponent<ActivePlayer>().isActive = false;
             }
@@ -91,7 +95,7 @@ public class CameraManager : MonoBehaviour
         
         if (currentCamera == characterManager.teamArray[teamSwitchIndex][0])
         {
-            previousCamera = characterManager.teamArray[teamSwitchIndex][characterManager.maxCharacterValue];
+            previousCamera = characterManager.teamArray[teamSwitchIndex][gameManager.characterPerPlayer - 1];
         }
         else
         {
