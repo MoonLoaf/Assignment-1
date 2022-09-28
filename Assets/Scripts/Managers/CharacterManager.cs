@@ -50,13 +50,13 @@ public class CharacterManager : MonoBehaviour
         teamArray = new List<GameObject>[gameManager.playerCount];
 
 
-        for (int i = 0; i < gameManager.characterPerPlayer; i++)
+        for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
             int prefabIndex = Random.Range(0, 6);
             Team1.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
         }
-        for (int i = 0; i < gameManager.characterPerPlayer; i++)
+        for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
             int prefabIndex = Random.Range(0, 6);
@@ -65,7 +65,7 @@ public class CharacterManager : MonoBehaviour
         }
         if (gameManager.playerCount == 3)
         {
-            for (int i = 0; i < gameManager.characterPerPlayer; i++)
+            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 6);
@@ -74,13 +74,13 @@ public class CharacterManager : MonoBehaviour
         }
         if (gameManager.playerCount == 4)
         {
-            for (int i = 0; i < gameManager.characterPerPlayer; i++)
+            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 6);
                 Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
-            for (int i = 0; i < gameManager.characterPerPlayer; i++)
+            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 6);

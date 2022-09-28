@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Main Menu Settings")]
 
-    [Range(2, 4)]
+    [SerializeField, Range(2, 4)]
     public int playerCount;
 
-    [Range(1, 6)]
-    public int characterPerPlayer;
+    [SerializeField, Range(1, 6)]
+    private int characterPerPlayer;
+
+    public int CharacterPerPlayer { get => characterPerPlayer; }
 
     private void StartGame()
     {

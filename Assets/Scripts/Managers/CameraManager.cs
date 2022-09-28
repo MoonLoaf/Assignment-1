@@ -95,7 +95,7 @@ public class CameraManager : MonoBehaviour
         
         if (currentCamera == characterManager.teamArray[teamSwitchIndex][0])
         {
-            previousCamera = characterManager.teamArray[teamSwitchIndex][gameManager.characterPerPlayer - 1];
+            previousCamera = characterManager.teamArray[teamSwitchIndex][gameManager.CharacterPerPlayer - 1];
         }
         else
         {
