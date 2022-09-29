@@ -20,7 +20,6 @@ public class CharacterManager : MonoBehaviour
     public GameObject characterPrefab4;
     public GameObject characterPrefab5;
     public GameObject characterPrefab6;
-    public GameObject characterPrefab7;
 
 
     private float _randomX;
@@ -45,7 +44,6 @@ public class CharacterManager : MonoBehaviour
         characterPrefabList.Add(characterPrefab4);
         characterPrefabList.Add(characterPrefab5);
         characterPrefabList.Add(characterPrefab6);
-        characterPrefabList.Add(characterPrefab7);
 
         teamArray = new List<GameObject>[gameManager.playerCount];
 
@@ -53,13 +51,13 @@ public class CharacterManager : MonoBehaviour
         for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            int prefabIndex = Random.Range(0, 6);
+            int prefabIndex = Random.Range(0, 5);
             Team1.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
         }
         for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
-            int prefabIndex = Random.Range(0, 6);
+            int prefabIndex = Random.Range(0, 5);
             Team2.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
 
         }
@@ -68,7 +66,7 @@ public class CharacterManager : MonoBehaviour
             for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                int prefabIndex = Random.Range(0, 6);
+                int prefabIndex = Random.Range(0, 5);
                 Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
@@ -77,13 +75,13 @@ public class CharacterManager : MonoBehaviour
             for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                int prefabIndex = Random.Range(0, 6);
+                int prefabIndex = Random.Range(0, 5);
                 Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
             for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
-                int prefabIndex = Random.Range(0, 6);
+                int prefabIndex = Random.Range(0, 5);
                 Team4.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }

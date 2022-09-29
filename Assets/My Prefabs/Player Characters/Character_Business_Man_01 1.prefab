@@ -273,9 +273,10 @@ GameObject:
   - component: {fileID: -103324438003088737}
   - component: {fileID: 1590211048864180186}
   - component: {fileID: 7348981829121237527}
+  - component: {fileID: -2037662391955487859}
   m_Layer: 0
   m_Name: Character_Business_Man_01 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,7 +417,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf1fef11bbc8214282a8ea5f77bbb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pistolObject: {fileID: 6335468867641663270}
+  Cross: {fileID: 1325594452626922, guid: 6a0053054e3130b4c90cdcab065de43e, type: 3}
+  IsDead: 0
   _HPtext: {fileID: 7826035564860254662}
+--- !u!114 &-2037662391955487859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214723647702548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f9a1fd093cf3c4680e7c8337c66dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &1233716815622704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,8 +2201,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23436450229330442, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64560954855894062, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64860775137797984, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+--- !u!1 &6335468867641663270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1908759806999368, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+  m_PrefabInstance: {fileID: 6335108233158599790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6339807569100879328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4879888146567566, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}

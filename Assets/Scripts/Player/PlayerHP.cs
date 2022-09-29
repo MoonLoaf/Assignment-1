@@ -5,15 +5,22 @@ using TMPro;
 
 public class PlayerHP : MonoBehaviour
 {
-    private int _maxHP = 85;
-    private int _currentHP;
+    private Pistol _pistol;
+    [SerializeField] private GameObject _pistolObject;
+    [SerializeField] private GameObject Cross;
+
+    private  float _maxHP = 100;
+    private float _currentHP;
+    public bool IsDead;
     [SerializeField]private TMP_Text _HPtext;
 
     void Start()
     {
+        IsDead = false;
         _currentHP = _maxHP;
+        _pistol = GetComponent<Pistol>();
     }
-    public void SetHP()
+    private void SetHP()
     {
         _HPtext.text = "HP: " + _currentHP.ToString();
     }
@@ -22,8 +29,31 @@ public class PlayerHP : MonoBehaviour
     {
         SetHP();
     }
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
+        _currentHP -= damage;
         
+        if(_currentHP <= 0)
+        {
+            _currentHP = 0;
+            
+            PlayerDead();
+        }
+
+        SetHP();
+    }
+    private void PlayerDead()
+    {
+        IsDead = true;
+        Instantiate(Cross, transform.position, Quaternion.identity);
+        Destroy(_pistolObject);
+        
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+        gameObject.GetComponentInChildren<Canvas>().enabled = false;
+
+        gameObject.GetComponent<PlayerMovement>().enabled = false;
+        gameObject.GetComponent<Pistol>().enabled = false;
+
+
     }
 }

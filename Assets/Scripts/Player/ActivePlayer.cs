@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class ActivePlayer : MonoBehaviour
 {
-    CameraManager cameraManager;
+    CameraManager _cameraManager;
 
-    PlayerMovement movementScript;
-    PlayerCam camScript;
-    PlayerAnimation animScript;
+    PlayerMovement _movementScript;
+    PlayerCam _camScript;
+    PlayerAnimation _animScript;
+
+    Pistol _pistol;
 
     public bool isActive = true;
 
-    private Camera cam;
+    private Camera _cam;
+    private PlayerHP _playerHp;
 
     void Start()
     {
-        cameraManager = FindObjectOfType<CameraManager>().GetComponent<CameraManager>();
+        _playerHp = gameObject.GetComponent<PlayerHP>();
+        _cameraManager = FindObjectOfType<CameraManager>().GetComponent<CameraManager>();
 
         Invoke("SetInactive", 2.5f);
 
-        movementScript = GetComponent<PlayerMovement>();
-        camScript = GetComponent<PlayerCam>();
-        animScript = GetComponent<PlayerAnimation>();
+        _movementScript = GetComponent<PlayerMovement>();
+        _camScript = GetComponent<PlayerCam>();
+        _animScript = GetComponent<PlayerAnimation>();
 
-        cam = this.gameObject.GetComponentInChildren<Camera>();
+        _pistol = GetComponent<Pistol>();
+        
+        _cam = this.gameObject.GetComponentInChildren<Camera>();
 
     }
 
@@ -32,22 +38,38 @@ public class ActivePlayer : MonoBehaviour
     {
         if (!isActive)
         {
-            this.movementScript.enabled = false;
-            this.camScript.enabled = false;
-            this.animScript.enabled = false;
-            cam.enabled = false;
+            this._movementScript.enabled = false;
+            this._camScript.enabled = false;
+            this._animScript.enabled = false;
+
+            this._pistol.enabled = false;
+            
+            _cam.enabled = false;
         }
-        if (isActive)
+        if (isActive && !_playerHp.IsDead)
         {
-            this.movementScript.enabled = true;
-            this.camScript.enabled = true;
-            this.animScript.enabled = true;
-            cam.enabled = true;
+            this._movementScript.enabled = true;
+            this._camScript.enabled = true;
+            this._animScript.enabled = true;
+
+            this._pistol.enabled = true;
+            
+            _cam.enabled = true;
+        }
+        else if(isActive && _playerHp.IsDead)
+        {
+            this._movementScript.enabled = false;
+            this._camScript.enabled = false;
+            this._animScript.enabled = false;
+
+            this._pistol.enabled = false;
+            
+            _cam.enabled = true;
         }
     }
     public void SetInactive()
     {
         isActive = false;
-        cameraManager.CameraSwitch();
+        _cameraManager.CameraSwitch();
     }
 }

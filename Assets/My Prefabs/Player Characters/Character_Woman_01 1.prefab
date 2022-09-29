@@ -1557,9 +1557,10 @@ GameObject:
   - component: {fileID: 402163958052064785}
   - component: {fileID: -6887224753524316682}
   - component: {fileID: -1932380312041303109}
+  - component: {fileID: -7348698656624281971}
   m_Layer: 0
   m_Name: Character_Woman_01 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1700,7 +1701,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf1fef11bbc8214282a8ea5f77bbb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pistolObject: {fileID: 2478281879245724647}
+  Cross: {fileID: 1325594452626922, guid: 6a0053054e3130b4c90cdcab065de43e, type: 3}
+  IsDead: 0
   _HPtext: {fileID: 1773743184975600907}
+--- !u!114 &-7348698656624281971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876497922086962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f9a1fd093cf3c4680e7c8337c66dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &1888534244931852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,6 +2073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+--- !u!1 &2478281879245724647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1908759806999368, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+  m_PrefabInstance: {fileID: 2477657355672314031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2482396022089609505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4879888146567566, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}

@@ -1,0 +1,98 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+public class Pistol : MonoBehaviour
+{
+    [FormerlySerializedAs("_cam")] [SerializeField] private Camera cam;
+    private RaycastHit _rayHit;
+
+    private int _maxAmmo;
+    private int _currentAmmo;
+
+    private static float _damage;
+    
+    public static float Damage { get => _damage; }
+    
+    private float _range;
+    private bool _reloading;
+    private float _reloadTime;
+    private float _timeBetweenShots;
+
+    private bool _shotReady;
+    
+    void Awake()
+    {
+        cam = GetComponentInChildren<Camera>();
+        //FindAmmoText();
+    }
+    void Start()
+    {
+        _maxAmmo = 6;
+        _currentAmmo = _maxAmmo;
+        _range = 1000;
+        _reloadTime = 2;
+        _damage = 100;
+        
+        _timeBetweenShots = 0.3f;
+
+        _shotReady = true;
+    }
+    void Update()
+    {
+        WeaponInputs();
+    }
+    // ReSharper disable Unity.PerformanceAnalysis
+    void WeaponInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _currentAmmo >= 1 && !_reloading && _shotReady)
+        {
+            Shoot();
+            _shotReady = false;
+            Invoke(nameof(ResetShot), _timeBetweenShots);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+            Invoke(nameof(ReloadFinished), _reloadTime);
+        }
+    }
+
+    void Shoot()
+    {
+        var camPosition = cam.transform;
+        Physics.Raycast(camPosition.position, camPosition.forward, out _rayHit, _range);
+
+        _currentAmmo--;
+
+        if (_rayHit.collider.CompareTag("Player"))
+        {
+            _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(Damage / _rayHit.distance);
+        }
+    }
+    private void Reload()
+    {
+        _reloading = true;
+        _currentAmmo = _maxAmmo;
+    }
+    private void ReloadFinished()
+    {
+        _reloading = false;
+    }
+    private void ResetShot()
+    {
+        _shotReady = true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+}

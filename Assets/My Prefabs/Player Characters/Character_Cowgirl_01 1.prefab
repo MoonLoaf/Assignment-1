@@ -1015,9 +1015,10 @@ GameObject:
   - component: {fileID: 7403979258352049453}
   - component: {fileID: -6983543187462757012}
   - component: {fileID: -3308078564291250467}
+  - component: {fileID: 629380917464060698}
   m_Layer: 0
   m_Name: Character_Cowgirl_01 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,7 +1159,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf1fef11bbc8214282a8ea5f77bbb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pistolObject: {fileID: 5643684565197623727}
+  Cross: {fileID: 1325594452626922, guid: 6a0053054e3130b4c90cdcab065de43e, type: 3}
+  IsDead: 0
   _HPtext: {fileID: 514159713697654550}
+--- !u!114 &629380917464060698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506550050545096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f9a1fd093cf3c4680e7c8337c66dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &1517154364432892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2076,11 @@ PrefabInstance:
 --- !u!4 &5640190151758019433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4879888146567566, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
+  m_PrefabInstance: {fileID: 5644326672434227943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5643684565197623727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1908759806999368, guid: 6df65dcb943b9404199d51439b2f5d16, type: 3}
   m_PrefabInstance: {fileID: 5644326672434227943}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9082154169481393867
