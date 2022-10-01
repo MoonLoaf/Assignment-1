@@ -1779,6 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 4660755415935402685}
+  TurnTimer: {fileID: 0}
   gravity: -10
   _jumpHeight: 1
   _groundCheck: {fileID: 366893668862725842}
@@ -1847,6 +1848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  TurnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
 --- !u!1 &1968527401152822
 GameObject:
   m_ObjectHideFlags: 0

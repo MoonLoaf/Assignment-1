@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
-    public float CurrentTurnTimer;
-    private float _fullTurnTimer = 100;
+    [SerializeField]private FloatVariable CurrentTurnTimer;
 
-    [SerializeField] private Image _turnTimerBar;
+    private Image _turnTimerBar;
+    
     void Start()
     {
-        _turnTimerBar.fillAmount = 100;
+        _turnTimerBar = GetComponent<Image>();
+        CurrentTurnTimer.Value = CurrentTurnTimer.MaxValue;
     }
     void Update()
     {
-        _turnTimerBar.fillAmount =- 1 * Time.deltaTime;
+        _turnTimerBar.fillAmount = CurrentTurnTimer.Value;
     }
 
     public void ResetTurnTimer()
     {
-        CurrentTurnTimer = _fullTurnTimer;
+        CurrentTurnTimer.Value = CurrentTurnTimer.MaxValue;
     }
 }

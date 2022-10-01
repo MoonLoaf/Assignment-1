@@ -8,6 +8,8 @@ public class Pistol : MonoBehaviour
     [FormerlySerializedAs("_cam")] [SerializeField] private Camera cam;
     private RaycastHit _rayHit;
 
+    [SerializeField] private FloatVariable TurnTimer;
+    
     private int _maxAmmo;
     private int _currentAmmo;
 
@@ -46,13 +48,13 @@ public class Pistol : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void WeaponInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _currentAmmo >= 1 && !_reloading && _shotReady)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _currentAmmo >= 1 && !_reloading && _shotReady && TurnTimer.Value >= 0.1f)
         {
             Shoot();
             _shotReady = false;
             Invoke(nameof(ResetShot), _timeBetweenShots);
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && TurnTimer.Value >= 0.2f)
         {
             Reload();
             Invoke(nameof(ReloadFinished), _reloadTime);
@@ -65,6 +67,7 @@ public class Pistol : MonoBehaviour
         Physics.Raycast(camPosition.position, camPosition.forward, out _rayHit, _range);
 
         _currentAmmo--;
+        TurnTimer.ApplyChange(-0.1f);
 
         if (_rayHit.collider.CompareTag("Player"))
         {
@@ -75,6 +78,7 @@ public class Pistol : MonoBehaviour
     {
         _reloading = true;
         _currentAmmo = _maxAmmo;
+        TurnTimer.ApplyChange(-0.2f);
     }
     private void ReloadFinished()
     {
@@ -84,15 +88,4 @@ public class Pistol : MonoBehaviour
     {
         _shotReady = true;
     }
-
-
-
-
-
-
-
-
-
-
-
 }

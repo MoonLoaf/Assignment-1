@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
 
+    [SerializeField] private FloatVariable TurnTimer;
+    
     private float _speed;
     public float gravity;
     [SerializeField] private float _jumpHeight;
@@ -55,9 +57,9 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 Movement = transform.right * x + transform.forward * z;
 
-        _controller.Move(move * _speed * Time.deltaTime);
+        _controller.Move(Movement * (_speed * Time.deltaTime));
 
         if (_isGrounded && velocity.y < 0f)
         {
