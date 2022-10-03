@@ -4,54 +4,55 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private Animator animator;
+    private Animator _animator;
 
+    [SerializeField] private FloatVariable _turnTimer;
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
         {
-            animator.SetBool("Ismoving", true);
+            _animator.SetBool("Ismoving", true);
         }
-        if (!Input.GetKey(KeyCode.W))
+        if (!Input.GetKey(KeyCode.W) || _turnTimer.Value == 0)
         {
-            animator.SetBool("Ismoving", false);
-        }
-
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("MovingBack", true);
-        }
-        if (!Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("MovingBack", false);
+            _animator.SetBool("Ismoving", false);
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S) && _turnTimer.Value != 0)
         {
-            animator.SetBool("StandingJump", true);
+            _animator.SetBool("MovingBack", true);
+        }
+        if (!Input.GetKey(KeyCode.S) || _turnTimer.Value == 0)
+        {
+            _animator.SetBool("MovingBack", false);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
+        {
+            _animator.SetBool("StandingJump", true);
         }
         if (!Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.W))
         {
-            animator.SetBool("StandingJump", false);
+            _animator.SetBool("StandingJump", false);
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
         {
-            animator.SetBool("RunningJump", true);
+            _animator.SetBool("RunningJump", true);
             Invoke("CancelJumpAnimation", 1f);
         }
     }
     private void CancelJumpAnimation()
     {
-        animator.SetBool("RunningJump", false);
+        _animator.SetBool("RunningJump", false);
     }
 
 

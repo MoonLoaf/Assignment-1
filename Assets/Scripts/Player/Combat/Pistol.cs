@@ -69,10 +69,16 @@ public class Pistol : MonoBehaviour
         _currentAmmo--;
         TurnTimer.ApplyChange(-0.1f);
 
-        if (_rayHit.collider.CompareTag("Player"))
+        if (_rayHit.collider != null)
         {
-            _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(Damage / _rayHit.distance);
+            if (_rayHit.collider.CompareTag("Player"))
+            {
+                _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(Damage / _rayHit.distance);
+            }
         }
+        
+        
+        
     }
     private void Reload()
     {

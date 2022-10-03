@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: -7446684225056996654}
-  TurnTimer: {fileID: 0}
-  gravity: -10
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  _gravity: -10
   _jumpHeight: 1
   _groundCheck: {fileID: 4553176781474535667}
   _groundDistance: 0.2
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0ce98f685f38d48a54ace6f8aa9063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
 --- !u!114 &-861936378388662173
 MonoBehaviour:
   m_ObjectHideFlags: 0

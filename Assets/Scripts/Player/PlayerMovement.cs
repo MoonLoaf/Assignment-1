@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
 
-    [SerializeField] private FloatVariable TurnTimer;
+    [SerializeField] private FloatVariable _turnTimer;
     
     private float _speed;
-    public float gravity;
+    private float _xMovement;
+    private float _zMovement;   
+    
+    [SerializeField] private float _gravity;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _groundDistance;
     [SerializeField] private LayerMask _groundMask;
-
 
     Vector3 velocity;
     [SerializeField]private bool _isGrounded;
@@ -40,41 +43,49 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        if (_turnTimer.Value > 0)
+        {
+            MovementInputs();
+        }
+        if (_xMovement != 0 || _zMovement != 0)
+        {
+            _turnTimer.ApplyChange(-0.05f * Time.deltaTime);
+        }
     }
-    private void Movement()
+    private void MovementInputs()
     {
-        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
+        _xMovement = Input.GetAxis("Horizontal");
+        _zMovement = Input.GetAxis("Vertical");
         
-
+        Vector3 Movement = transform.right * _xMovement + transform.forward * _zMovement;
+        
+        _controller.Move(Movement * (_speed * Time.deltaTime));
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _speed = 8f;
         }
         else { _speed = 5f; }
+    }
 
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 Movement = transform.right * x + transform.forward * z;
-
-        _controller.Move(Movement * (_speed * Time.deltaTime));
-
+    private void FixedUpdate()
+    {
+        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
+        
         if (_isGrounded && velocity.y < 0f)
         {
             velocity.y = -2f;
-            gravity = -10f;
+            _gravity = -10f;
         }
-        if (Input.GetKey(KeyCode.Space) && _isGrounded)
+        if (Input.GetKey(KeyCode.Space) && _isGrounded && _turnTimer.Value != 0)
         {
-            velocity.y = Mathf.Sqrt(_jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += _gravity * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime);
     }
-    
+
     /*public void SetActiveWeapon(int weaponIndex)
     {
         if (weaponIndex == 1)
