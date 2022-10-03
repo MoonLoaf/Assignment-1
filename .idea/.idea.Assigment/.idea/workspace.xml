@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="da54dead-9b24-4496-8f58-637f82e27b87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/CharUiCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/CharUiCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +26,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/Scripts/PlayerButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_FontAsset_CreationMenu.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -39,20 +38,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
@@ -102,6 +101,7 @@
       <workItem from="1664784960317" duration="19000" />
       <workItem from="1664785025074" duration="475000" />
       <workItem from="1664785517898" duration="5214000" />
+      <workItem from="1664795220334" duration="5211000" />
     </task>
     <servers />
   </component>

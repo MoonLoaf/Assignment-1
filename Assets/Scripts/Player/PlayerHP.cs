@@ -22,9 +22,8 @@ public class PlayerHP : MonoBehaviour
     }
     private void SetHP()
     {
-        _HPtext.text = "HP: " + _currentHP.ToString();
+        _HPtext.text = $"HP: {_currentHP:N0}";
     }
-
     void Update()
     {
         SetHP();

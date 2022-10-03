@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     
     private float _speed;
     private float _xMovement;
-    private float _zMovement;   
+    private float _zMovement;
+
+    private float _actionCost;
     
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpHeight;
@@ -49,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (_xMovement != 0 || _zMovement != 0)
         {
-            _turnTimer.ApplyChange(-0.05f * Time.deltaTime);
+            _turnTimer.ApplyChange(-_actionCost * Time.deltaTime);
         }
     }
     private void MovementInputs()
@@ -64,8 +66,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _speed = 8f;
+            _actionCost = 0.16f;
         }
-        else { _speed = 5f; }
+        else
+        {
+            _speed = 5f;
+            _actionCost = 0.1f;
+        }
     }
 
     private void FixedUpdate()
