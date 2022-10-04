@@ -9,25 +9,18 @@ public class GameManager : MonoBehaviour
 
     [Header("Main Menu Settings")]
 
-    [SerializeField, Range(2, 4)]
-    public int playerCount;
+    public IntVariable playerCount;
 
-    [SerializeField, Range(1, 6)]
-    private int characterPerPlayer;
+    [SerializeField] private IntVariable characterPerPlayer;
 
-    public int CharacterPerPlayer { get => characterPerPlayer; }
+    public int CharacterPerPlayer { get => characterPerPlayer.Value; }
 
+    private void Start()
+    {
+        StartGame();
+    }
     private void StartGame()
     {
         _onGameStart.Raise();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            StartGame();
-        }
-    }
-
 }

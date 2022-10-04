@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -9,38 +10,43 @@ using Button = UnityEngine.UIElements.Button;
 
 public class PlayerButtons : MonoBehaviour
 {
-    [SerializeField]private TMP_Text _playerCountText;
-    [SerializeField]private TMP_Text _characterCountText;
+    [SerializeField]private TMP_Text _countText;
 
-    private int _menuPlayerCount;
-    private int _menuCharacterCount;
+    [SerializeField] private IntVariable _intVariable;
+    [SerializeField] private int _maxValue;
+    [SerializeField] private int _minValue;
+
+
+    private void Start()
+    {
+        UpdatePlayerText();
+    }
+
+    public void CountIncrease()
+    {
+        _intVariable.ApplyChange(+1);
+
+        if (_intVariable.Value >= _maxValue)
+        {
+            _intVariable.Value = _maxValue;
+        }
+
+        UpdatePlayerText();
+    }
+    public void CountDecrease()
+    {
+        _intVariable.ApplyChange(-1);
+        
+        if (_intVariable.Value <= _minValue)
+        {
+            _intVariable.Value = _minValue;
+        }
+        UpdatePlayerText();
+    }
     
-    
-    public void PlayerIncrease()
+    private void UpdatePlayerText()
     {
-        _menuPlayerCount++;
-        UpdateText();
-    }
-    public void PlayerDecrease()
-    {
-        _menuPlayerCount--;
-        UpdateText();
-    }
-    
-    public void characterIncrease()
-    { 
-        _menuCharacterCount++;
-        UpdateText();
-    }
-    public void CharacterDecrease()
-    {
-        _menuCharacterCount--;
-        UpdateText();
-    }
-    private void UpdateText()
-    {
-        _playerCountText.text = _menuPlayerCount.ToString();
-        _characterCountText.text = _menuCharacterCount.ToString();
+        _countText.text = _intVariable.Value.ToString();
     }
 
 }

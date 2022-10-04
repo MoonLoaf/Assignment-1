@@ -6150,8 +6150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onGameStart: {fileID: 11400000, guid: 206e05772576432458444c47f3dcb161, type: 2}
-  playerCount: 3
-  characterPerPlayer: 4
+  playerCount: {fileID: 11400000, guid: bce5201057ac7194f8ed6869b077d077, type: 2}
+  characterPerPlayer: {fileID: 11400000, guid: 61d9103ba8b94eb46898584e6a28b650, type: 2}
 --- !u!4 &871298371
 Transform:
   m_ObjectHideFlags: 0

@@ -437,6 +437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   TurnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  CurrentAmmo: 0
+  Reloading: 0
 --- !u!1 &1233716815622704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2031,10 @@ PrefabInstance:
     - target: {fileID: 2276001705167780286, guid: e010f1ac98abea946b695c0c4e7aca3b, type: 3}
       propertyPath: m_Name
       value: CharUiCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594777409042994391, guid: e010f1ac98abea946b695c0c4e7aca3b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7912765016367751451, guid: e010f1ac98abea946b695c0c4e7aca3b, type: 3}
       propertyPath: m_Pivot.x
