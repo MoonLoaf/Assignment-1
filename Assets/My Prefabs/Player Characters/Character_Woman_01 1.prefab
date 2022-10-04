@@ -1721,6 +1721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   TurnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  CurrentAmmo: 0
+  Reloading: 0
 --- !u!1 &1888534244931852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,7 +2014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478166456912746726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27839702, y: 0.7715676, z: 0.5184723}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

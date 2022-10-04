@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_turnTimer.Value > 0)
+        if (_turnTimer.Value > 0 && GameManager.InputEnabled)
         {
             MovementInputs();
         }
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
             _gravity = -10f;
         }
-        if (Input.GetKey(KeyCode.Space) && _isGrounded && _turnTimer.Value != 0)
+        if (Input.GetKey(KeyCode.Space) && _isGrounded && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
             velocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
         }

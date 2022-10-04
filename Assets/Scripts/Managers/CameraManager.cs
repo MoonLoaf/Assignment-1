@@ -79,7 +79,7 @@ public class CameraManager : MonoBehaviour
 
         if (teamSwitchIndex == 0)
         {
-            foreach (GameObject playerCharacter in _characterManager.teamArray[_gameManager.playerCount.Value -1])
+            foreach (GameObject playerCharacter in _characterManager.teamArray[_gameManager.playerCount -1])
             {
                 playerCharacter.GetComponent<ActivePlayer>().isActive = false;
             }

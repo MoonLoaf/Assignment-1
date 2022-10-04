@@ -50,7 +50,7 @@ public class Pistol : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void WeaponInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && TurnTimer.Value >= 0.1f)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && TurnTimer.Value >= 0.1f && GameManager.InputEnabled)
         {
             Shoot();
             _shotReady = false;

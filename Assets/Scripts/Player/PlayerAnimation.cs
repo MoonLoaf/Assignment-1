@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
+        if (Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
             _animator.SetBool("Ismoving", true);
         }
@@ -24,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.S) && _turnTimer.Value != 0)
+        if (Input.GetKey(KeyCode.S) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
             _animator.SetBool("MovingBack", true);
         }
@@ -34,7 +34,7 @@ public class PlayerAnimation : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
             _animator.SetBool("StandingJump", true);
         }
@@ -44,7 +44,7 @@ public class PlayerAnimation : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && _turnTimer.Value != 0)
+        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
             _animator.SetBool("RunningJump", true);
             Invoke("CancelJumpAnimation", 1f);

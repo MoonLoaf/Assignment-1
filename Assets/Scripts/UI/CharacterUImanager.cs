@@ -5,12 +5,12 @@ using TMPro;
 
 public class CharacterUImanager : MonoBehaviour
 {
-    CharacterManager characterManager;
+    [SerializeField] private CharacterManager characterManager;
     private TMP_Text teamText;
 
     private void Start()
     {
-        characterManager = FindObjectOfType<CharacterManager>().GetComponent<CharacterManager>();
+        characterManager = characterManager.GetComponent<CharacterManager>();
         
     }
     public void init()

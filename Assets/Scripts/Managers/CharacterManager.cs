@@ -45,7 +45,7 @@ public class CharacterManager : MonoBehaviour
         characterPrefabList.Add(characterPrefab5);
         characterPrefabList.Add(characterPrefab6);
 
-        teamArray = new List<GameObject>[gameManager.playerCount.Value];
+        teamArray = new List<GameObject>[gameManager.playerCount];
 
 
         for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
@@ -61,7 +61,7 @@ public class CharacterManager : MonoBehaviour
             Team2.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
 
         }
-        if (gameManager.playerCount.Value == 3)
+        if (gameManager.playerCount == 3)
         {
             for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
@@ -70,7 +70,7 @@ public class CharacterManager : MonoBehaviour
                 Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
-        if (gameManager.playerCount.Value == 4)
+        if (gameManager.playerCount == 4)
         {
             for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
             {
