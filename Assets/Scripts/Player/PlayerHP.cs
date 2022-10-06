@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerHP : MonoBehaviour
 {
     private Pistol _pistol;
+    private TeamHP _teamHP;
     [SerializeField] private GameObject _pistolObject;
     [SerializeField] private GameObject Cross;
 
@@ -19,6 +20,7 @@ public class PlayerHP : MonoBehaviour
         IsDead = false;
         _currentHP = _maxHP;
         _pistol = GetComponent<Pistol>();
+        _teamHP = FindObjectOfType<TeamHP>().GetComponent<TeamHP>();
     }
     private void SetHP()
     {
@@ -52,7 +54,7 @@ public class PlayerHP : MonoBehaviour
 
         gameObject.GetComponent<PlayerMovement>().enabled = false;
         gameObject.GetComponent<Pistol>().enabled = false;
-
-
+        
+        _teamHP.UpdateTeamCount();
     }
 }
