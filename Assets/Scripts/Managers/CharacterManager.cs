@@ -7,19 +7,20 @@ public class CharacterManager : MonoBehaviour
 {
     public VoidEvent CameraInit;
     public VoidEvent CharacterUIinit;
+    public VoidEvent TeamDeathCheckInit;
     
-    GameManager gameManager;
+    private GameManager _gameManager;
     private Vector3 _spawnPoint;
 
     //Playable Characters
 
-    List<GameObject> characterPrefabList = new List<GameObject>();
-    public GameObject characterPrefab1;
-    public GameObject characterPrefab2;
-    public GameObject characterPrefab3;
-    public GameObject characterPrefab4;
-    public GameObject characterPrefab5;
-    public GameObject characterPrefab6;
+    private List<GameObject> _characterPrefabList = new List<GameObject>();
+    public GameObject CharacterPrefab1;
+    public GameObject CharacterPrefab2;
+    public GameObject CharacterPrefab3;
+    public GameObject CharacterPrefab4;
+    public GameObject CharacterPrefab5;
+    public GameObject CharacterPrefab6;
 
 
     private float _randomX;
@@ -31,80 +32,81 @@ public class CharacterManager : MonoBehaviour
     public List<GameObject> Team3;
     public List<GameObject> Team4;
 
-    public List<GameObject>[] teamArray;
-    public int teamArrayIndex;
+    public List<GameObject>[] TeamArray;
+    public int TeamArrayIndex;
 
-    public void init()
+    public void Init()
     {
-        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        _gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
-        characterPrefabList.Add(characterPrefab1);
-        characterPrefabList.Add(characterPrefab2);
-        characterPrefabList.Add(characterPrefab3);
-        characterPrefabList.Add(characterPrefab4);
-        characterPrefabList.Add(characterPrefab5);
-        characterPrefabList.Add(characterPrefab6);
+        _characterPrefabList.Add(CharacterPrefab1);
+        _characterPrefabList.Add(CharacterPrefab2);
+        _characterPrefabList.Add(CharacterPrefab3);
+        _characterPrefabList.Add(CharacterPrefab4);
+        _characterPrefabList.Add(CharacterPrefab5);
+        _characterPrefabList.Add(CharacterPrefab6);
 
-        teamArray = new List<GameObject>[gameManager.playerCount];
+        TeamArray = new List<GameObject>[_gameManager.playerCount];
 
 
-        for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
+        for (int i = 0; i < _gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
             int prefabIndex = Random.Range(0, 5);
-            Team1.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+            Team1.Add(Instantiate(_characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
         }
-        for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
+        for (int i = 0; i < _gameManager.CharacterPerPlayer; i++)
         {
             GenerateSpawnPoint();
             int prefabIndex = Random.Range(0, 5);
-            Team2.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+            Team2.Add(Instantiate(_characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
 
         }
-        if (gameManager.playerCount == 3)
+        if (_gameManager.playerCount == 3)
         {
-            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
+            for (int i = 0; i < _gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 5);
-                Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+                Team3.Add(Instantiate(_characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
-        if (gameManager.playerCount == 4)
+        if (_gameManager.playerCount == 4)
         {
-            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
+            for (int i = 0; i < _gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 5);
-                Team3.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+                Team3.Add(Instantiate(_characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
-            for (int i = 0; i < gameManager.CharacterPerPlayer; i++)
+            for (int i = 0; i < _gameManager.CharacterPerPlayer; i++)
             {
                 GenerateSpawnPoint();
                 int prefabIndex = Random.Range(0, 5);
-                Team4.Add(Instantiate(characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
+                Team4.Add(Instantiate(_characterPrefabList[prefabIndex], _spawnPoint, Quaternion.identity));
             }
         }
 
         if (Team1.Count != 0)
         {
-            teamArray[0] = Team1;
+            TeamArray[0] = Team1;
         }
         if (Team2.Count != 0)
         {
-            teamArray[1] = Team2;
+            TeamArray[1] = Team2;
         }
         if (Team3.Count != 0)
         {
-            teamArray[2] = Team3;
+            TeamArray[2] = Team3;
         }
         if (Team4.Count != 0)
         {
-            teamArray[3] = Team4; 
+            TeamArray[3] = Team4; 
         }
 
         CameraInit.Raise();
         CharacterUIinit.Raise();
+        TeamDeathCheckInit.Raise();
     }
     private void GenerateSpawnPoint()
     {

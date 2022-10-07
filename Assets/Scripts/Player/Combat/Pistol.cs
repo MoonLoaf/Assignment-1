@@ -11,7 +11,7 @@ public class Pistol : MonoBehaviour
     private RaycastHit _rayHit;
     [SerializeField] private ParticleSystem _gunShot;
 
-    [SerializeField] private FloatVariable TurnTimer;
+    [SerializeField] private FloatVariable _turnTimer;
     
     private int _maxAmmo;
     public int CurrentAmmo;
@@ -27,7 +27,7 @@ public class Pistol : MonoBehaviour
     
 
     private bool _shotReady;
-    private bool isAiming;
+    private bool _isAiming;
     
     void Awake()
     {
@@ -53,14 +53,14 @@ public class Pistol : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void WeaponInputs()
     {
-        if (isAiming && Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && TurnTimer.Value >= 0.1f && GameManager.InputEnabled)
+        if (_isAiming && Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && _turnTimer.Value >= 0.1f && GameManager.InputEnabled)
         {
             Shoot();
             _gunShot.Play();
             _shotReady = false;
             Invoke(nameof(ResetShot), _timeBetweenShots);
         }
-        if (Input.GetKeyDown(KeyCode.R) && TurnTimer.Value >= 0.2f)
+        if (Input.GetKeyDown(KeyCode.R) && _turnTimer.Value >= 0.2f)
         {
             Reload();
             Invoke(nameof(ReloadFinished), _reloadTime);
@@ -68,11 +68,11 @@ public class Pistol : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            isAiming = true;
+            _isAiming = true;
         }
         else
         {
-            isAiming = false;
+            _isAiming = false;
         }
     }
     void Shoot()
@@ -81,13 +81,18 @@ public class Pistol : MonoBehaviour
         Physics.Raycast(camPosition.position, camPosition.forward, out _rayHit, _range);
 
         CurrentAmmo--;
-        TurnTimer.ApplyChange(-0.1f);
+        _turnTimer.ApplyChange(-0.1f);
 
         if (_rayHit.collider != null)
         {
             if (_rayHit.collider.CompareTag("Player"))
             {
-                _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(Damage / _rayHit.distance);
+                float calculatedDamage = Damage / _rayHit.distance;
+                if (calculatedDamage >= 20)
+                {
+                    calculatedDamage = 20;
+                }
+                _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(calculatedDamage);
             }
         }
     }
@@ -95,7 +100,7 @@ public class Pistol : MonoBehaviour
     {
         Reloading = true;
         CurrentAmmo = _maxAmmo;
-        TurnTimer.ApplyChange(-0.2f);
+        _turnTimer.ApplyChange(-0.2f);
     }
     private void ReloadFinished()
     {

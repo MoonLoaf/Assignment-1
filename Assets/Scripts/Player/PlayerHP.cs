@@ -9,6 +9,7 @@ public class PlayerHP : MonoBehaviour
     private TeamDeathCheck _teamDeathCheck;
     
     [SerializeField] private GameObject _pistolObject;
+    [SerializeField] private GameObject _knifeObject;
     [SerializeField] private GameObject _cross;
 
     private  float _maxHP = 100;
@@ -33,6 +34,10 @@ public class PlayerHP : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        if (damage >= 20)
+        {
+            damage = 20;
+        }
         _currentHP -= damage;
         
         if(_currentHP <= 0)
@@ -55,6 +60,7 @@ public class PlayerHP : MonoBehaviour
 
         gameObject.GetComponent<PlayerMovement>().enabled = false;
         gameObject.GetComponent<Pistol>().enabled = false;
+        gameObject.GetComponent<MeleeAttack>().enabled = false;
         
         _teamDeathCheck.CheckTeamDeath();
         _teamDeathCheck.CheckWin();

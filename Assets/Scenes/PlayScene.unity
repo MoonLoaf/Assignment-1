@@ -7986,9 +7986,9 @@ RectTransform:
   m_Father: {fileID: 834145461}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 57}
+  m_AnchorMin: {x: 0.26000002, y: 0.61200005}
+  m_AnchorMax: {x: 0.730729, y: 0.78300005}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531080618
@@ -8074,7 +8074,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 119.143105, z: 0, w: 811.12964}
+  m_margin: {x: 0, y: 0.069612496, z: 0, w: 0.89006424}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13029,16 +13029,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turnManager: {fileID: 1411214247}
-  turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
-  onEndTurn: {fileID: 11400000, guid: 3fe3977685ef356439d6137d90d95a92, type: 2}
-  currentCamera: {fileID: 0}
-  previousCamera: {fileID: 0}
-  team1Cameras: []
-  team2Cameras: []
-  team3Cameras: []
-  team4Cameras: []
-  teamSwitchIndex: 0
-  characterSwitchIndex: 0
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  OnEndTurn: {fileID: 11400000, guid: 3fe3977685ef356439d6137d90d95a92, type: 2}
+  CurrentCamera: {fileID: 0}
+  PreviousCamera: {fileID: 0}
+  Team1Cameras: []
+  Team2Cameras: []
+  Team3Cameras: []
+  Team4Cameras: []
+  _teamSwitchIndex: 0
+  _characterSwitchIndex: 0
 --- !u!4 &948554508
 Transform:
   m_ObjectHideFlags: 0
@@ -22573,7 +22573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b32e2db344fc7f45b4e31604a84c2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterManager: {fileID: 2043888036}
+  _characterManager: {fileID: 2043888036}
 --- !u!4 &1700228798
 Transform:
   m_ObjectHideFlags: 0
@@ -22596,6 +22596,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1411214247, guid: e1b31fd092e701242a9abd783442c50b, type: 3}
+      propertyPath: _currentTurnTimer
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
     - target: {fileID: 3077099140114235489, guid: e1b31fd092e701242a9abd783442c50b, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -27623,18 +27627,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraInit: {fileID: 11400000, guid: a04eb01df9c5d0341a59f9696d2b0b85, type: 2}
   CharacterUIinit: {fileID: 11400000, guid: 44acf067ee0e72f4a889fbe31a51db72, type: 2}
-  characterPrefab1: {fileID: 1876497922086962, guid: 3c8a2fb85924363478470f24c94047fb, type: 3}
-  characterPrefab2: {fileID: 1214723647702548, guid: d0b3d43143a33094c85e22ed32a4f684, type: 3}
-  characterPrefab3: {fileID: 1800371080893130, guid: 38e193d939ab72a43adb956ffdb9aee0, type: 3}
-  characterPrefab4: {fileID: 1506550050545096, guid: 29e5641476ca2b749a61cc6af834424e, type: 3}
-  characterPrefab5: {fileID: 1964704263138806, guid: 279add6bf939d12479520db09709932b, type: 3}
-  characterPrefab6: {fileID: 1040643676778012, guid: 399a47775f9e0ca458e39e6d2c42da75, type: 3}
+  TeamDeathCheckInit: {fileID: 11400000, guid: 80e8d620b6a3ce34eb0397404f76a6c3, type: 2}
+  CharacterPrefab1: {fileID: 1214723647702548, guid: d0b3d43143a33094c85e22ed32a4f684, type: 3}
+  CharacterPrefab2: {fileID: 1800371080893130, guid: 38e193d939ab72a43adb956ffdb9aee0, type: 3}
+  CharacterPrefab3: {fileID: 1506550050545096, guid: 29e5641476ca2b749a61cc6af834424e, type: 3}
+  CharacterPrefab4: {fileID: 1964704263138806, guid: 279add6bf939d12479520db09709932b, type: 3}
+  CharacterPrefab5: {fileID: 1040643676778012, guid: 399a47775f9e0ca458e39e6d2c42da75, type: 3}
+  CharacterPrefab6: {fileID: 1876497922086962, guid: 3c8a2fb85924363478470f24c94047fb, type: 3}
   _spawnHeight: 20
   Team1: []
   Team2: []
   Team3: []
   Team4: []
-  teamArrayIndex: 0
+  TeamArrayIndex: 0
 --- !u!4 &2043888037
 Transform:
   m_ObjectHideFlags: 0
@@ -27668,7 +27673,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2043888036}
         m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
-        m_MethodName: init
+        m_MethodName: Init
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28547,6 +28552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128616212}
   - component: {fileID: 2128616211}
+  - component: {fileID: 2128616213}
   m_Layer: 0
   m_Name: TeamDeathCheck
   m_TagString: Untagged
@@ -28586,6 +28592,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128616213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128616210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756a97af9dc157f4a9716981d397c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 80e8d620b6a3ce34eb0397404f76a6c3, type: 2}
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2128616211}
+        m_TargetAssemblyTypeName: TeamDeathCheck, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2132202172
 PrefabInstance:
   m_ObjectHideFlags: 0

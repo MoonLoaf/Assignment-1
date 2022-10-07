@@ -27,11 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_turnTimer.Value > 0 && GameManager.InputEnabled);
+        if(_turnTimer.Value > 0 && GameManager.InputEnabled)
         {
             MovementInputs();
         }
-        if (_xMovement != 0 || _zMovement != 0)
+        if(_xMovement != 0 || _zMovement != 0)
         {
             _turnTimer.ApplyChange(-_actionCost * Time.deltaTime);
         }

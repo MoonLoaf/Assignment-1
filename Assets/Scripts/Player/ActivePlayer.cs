@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ActivePlayer : MonoBehaviour
 {
-    CameraManager _cameraManager;
+    private CameraManager _cameraManager;
 
-    PlayerMovement _movementScript;
-    PlayerCam _camScript;
-    PlayerAnimation _animScript;
+    private PlayerMovement _movementScript;
+    private PlayerCam _camScript;
+    private PlayerAnimation _animScript;
     private MeleeAttack _meleeAttack;
 
-    Pistol _pistol;
+    private Pistol _pistol;
 
-    public bool isActive = true;
+    public bool IsActive = true;
 
     private Camera _cam;
     private PlayerHP _playerHp;
@@ -38,7 +38,7 @@ public class ActivePlayer : MonoBehaviour
 
     void Update()
     {
-        if (!isActive)
+        if (!IsActive)
         {
             this._movementScript.enabled = false;
             this._camScript.enabled = false;
@@ -49,7 +49,7 @@ public class ActivePlayer : MonoBehaviour
             
             _cam.enabled = false;
         }
-        if (isActive && !_playerHp.IsDead)
+        if (IsActive && !_playerHp.IsDead)
         {
             this._movementScript.enabled = true;
             this._camScript.enabled = true;
@@ -60,7 +60,7 @@ public class ActivePlayer : MonoBehaviour
             
             _cam.enabled = true;
         }
-        else if(isActive && _playerHp.IsDead)
+        else if(IsActive && _playerHp.IsDead)
         {
             this._movementScript.enabled = false;
             this._camScript.enabled = false;
@@ -74,7 +74,7 @@ public class ActivePlayer : MonoBehaviour
     }
     public void SetInactive()
     {
-        isActive = false;
+        IsActive = false;
         _cameraManager.CameraSwitch();
     }
 }

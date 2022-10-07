@@ -6,29 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="da54dead-9b24-4496-8f58-637f82e27b87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Aim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Aim.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Idle 1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Idle 1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Melee.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Melee.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonWestern/Prefabs/Weapons/SM_Wep_American_Bayonet_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonWestern/Prefabs/Weapons/SM_Wep_American_Bayonet_01.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamHP.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamHP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CharacterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamDeathCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamDeathCheck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ActivePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ActivePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/MeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/MeleeAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BillBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BillBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CharacterUImanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CharacterUImanager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,10 +78,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1468">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1468" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -126,6 +126,8 @@
       <workItem from="1665051338178" duration="4102000" />
       <workItem from="1665125613694" duration="3931000" />
       <workItem from="1665129601923" duration="11097000" />
+      <workItem from="1665142050658" duration="2900000" />
+      <workItem from="1665146685977" duration="3291000" />
     </task>
     <servers />
   </component>

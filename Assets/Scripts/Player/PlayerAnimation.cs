@@ -11,7 +11,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
     }
-
     void Update()
     {
         if (Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
@@ -52,13 +51,10 @@ public class PlayerAnimation : MonoBehaviour
             _animator.SetBool("IsAiming", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && _turnTimer.Value >= 0.35f)
         {
             _animator.SetTrigger("Melee");
-            
         }
-        
-        
 
         if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
@@ -70,9 +66,5 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetBool("RunningJump", false);
     }
-    
-
-
-
 }
 

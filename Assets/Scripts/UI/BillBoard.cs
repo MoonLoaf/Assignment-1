@@ -12,9 +12,9 @@ public class BillBoard : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (cameraManager.currentCamera != null)
+        if (cameraManager.CurrentCamera != null)
         {
-            transform.LookAt(transform.position + cameraManager.currentCamera.transform.forward);
+            transform.LookAt(transform.position + cameraManager.CurrentCamera.transform.forward);
         }
     }
 }

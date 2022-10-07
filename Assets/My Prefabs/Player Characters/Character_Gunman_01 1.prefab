@@ -1714,6 +1714,7 @@ Transform:
   - {fileID: 8197935185867500699}
   - {fileID: 6606991057038236426}
   - {fileID: 6894619642777312863}
+  - {fileID: 7827986639986588378}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1767,7 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cee37afd924a8a478c5181e65db6e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  IsActive: 1
 --- !u!114 &345131288210027974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +1783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 4660755415935402685}
   _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
-  canMove: 0
   _gravity: -10
   _jumpHeight: 1
   _groundCheck: {fileID: 366893668862725842}
@@ -1803,10 +1803,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be604ae0321423c4982832858fb9d676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1
-  autoLockCursor: 0
-  rotationTransform: {fileID: 8197935185867500699}
-  cam: {fileID: 1468449323467299864}
+  MouseSensitivity: 1
+  AutoLockCursor: 0
+  RotationTransform: {fileID: 8197935185867500699}
+  Cam: {fileID: 0}
 --- !u!114 &220652774130768423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pistolObject: {fileID: 4630261225364457271}
+  _knifeObject: {fileID: 6181262790820274629}
   _cross: {fileID: 1325594452626922, guid: 6a0053054e3130b4c90cdcab065de43e, type: 3}
   IsDead: 0
   _HPtext: {fileID: 5425068724083650201}
@@ -1850,7 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cam: {fileID: 0}
   _gunShot: {fileID: 84907306874557774}
-  TurnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
   CurrentAmmo: 0
   Reloading: 0
 --- !u!114 &3893268003067972145
@@ -1865,7 +1866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d87c23fd986b3f408be6e20a40a5f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1.2
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  _attackPosition: {fileID: 7827986639986588378}
+  _range: 0.3
   _damage: 30
 --- !u!1 &1968527401152822
 GameObject:
@@ -2004,6 +2007,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4201403797357164}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8792666191367413058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7827986639986588378}
+  m_Layer: 0
+  m_Name: MeleeTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7827986639986588378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792666191367413058}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.078, z: 0.651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4201403797357164}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8913338572019329004
 GameObject:
@@ -2360,6 +2394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3c712afb30af7439c380abd17a6681, type: 3}
+--- !u!1 &6181262790820274629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1457395337348762, guid: 0a3c712afb30af7439c380abd17a6681, type: 3}
+  m_PrefabInstance: {fileID: 6182717419858945887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6187155558507136197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4606470396650394, guid: 0a3c712afb30af7439c380abd17a6681, type: 3}

@@ -298,6 +298,7 @@ Transform:
   - {fileID: 4629142502244992}
   - {fileID: 7220390377076193328}
   - {fileID: 4350605237604270996}
+  - {fileID: 3854916668714835662}
   - {fileID: 4466074292020733132}
   - {fileID: 8681957848775383296}
   m_Father: {fileID: 0}
@@ -353,10 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be604ae0321423c4982832858fb9d676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1
-  autoLockCursor: 0
-  rotationTransform: {fileID: 4350605237604270996}
-  cam: {fileID: 7473607322298947614}
+  MouseSensitivity: 1
+  AutoLockCursor: 0
+  RotationTransform: {fileID: 4350605237604270996}
+  Cam: {fileID: 7473607322298947614}
 --- !u!114 &-114086642081295888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: -8103972653484466207}
   _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
-  canMove: 0
   _gravity: -10
   _jumpHeight: 1
   _groundCheck: {fileID: 7220390377076193328}
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cee37afd924a8a478c5181e65db6e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  IsActive: 1
 --- !u!114 &7348981829121237527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pistolObject: {fileID: 6335468867641663270}
+  _knifeObject: {fileID: 645453589189625116}
   _cross: {fileID: 1325594452626922, guid: 6a0053054e3130b4c90cdcab065de43e, type: 3}
   IsDead: 0
   _HPtext: {fileID: 7826035564860254662}
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cam: {fileID: 0}
   _gunShot: {fileID: 2519426822621181570}
-  TurnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
   CurrentAmmo: 0
   Reloading: 0
 --- !u!114 &-2377221043156765122
@@ -451,7 +452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d87c23fd986b3f408be6e20a40a5f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1.2
+  _turnTimer: {fileID: 11400000, guid: f5a7e43d07a79564d83b6ddbd89d83cb, type: 2}
+  _attackPosition: {fileID: 3854916668714835662}
+  _range: 0.3
   _damage: 30
 --- !u!1 &1233716815622704
 GameObject:
@@ -1982,6 +1985,37 @@ Transform:
   m_Father: {fileID: 4301369446033440}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5287453503248569095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3854916668714835662}
+  m_Layer: 0
+  m_Name: MeleeTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3854916668714835662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287453503248569095}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.078, z: 0.651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4301369446033440}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7021208867880666590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,7 +2046,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4301369446033440}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7473607322298947614
 Camera:
@@ -2119,6 +2153,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4606470396650394, guid: 0a3c712afb30af7439c380abd17a6681, type: 3}
   m_PrefabInstance: {fileID: 644069588443022214}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &645453589189625116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1457395337348762, guid: 0a3c712afb30af7439c380abd17a6681, type: 3}
+  m_PrefabInstance: {fileID: 644069588443022214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1563676447763544091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2144,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7912765016367751451, guid: e010f1ac98abea946b695c0c4e7aca3b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7912765016367751451, guid: e010f1ac98abea946b695c0c4e7aca3b, type: 3}
       propertyPath: m_AnchorMax.x

@@ -5,35 +5,35 @@ using TMPro;
 
 public class CharacterUImanager : MonoBehaviour
 {
-    [SerializeField] private CharacterManager characterManager;
-    private TMP_Text teamText;
+    [SerializeField] private CharacterManager _characterManager;
+    private TMP_Text _teamText;
 
     private void Start()
     {
-        characterManager = characterManager.GetComponent<CharacterManager>();
+        _characterManager = _characterManager.GetComponent<CharacterManager>();
         
     }
     public void init()
     {
-        foreach (GameObject playerCharacter in characterManager.Team1)
+        foreach (GameObject playerCharacter in _characterManager.Team1)
         {
-            teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
-            teamText.text = "Team 1";
+            _teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
+            _teamText.text = "Team 1";
         }
-        foreach (GameObject playerCharacter in characterManager.Team2)
+        foreach (GameObject playerCharacter in _characterManager.Team2)
         {
-            teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
-            teamText.text = "Team 2";
+            _teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
+            _teamText.text = "Team 2";
         }
-        foreach (GameObject playerCharacter in characterManager.Team3)
+        foreach (GameObject playerCharacter in _characterManager.Team3)
         {
-            teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
-            teamText.text = "Team 3";
+            _teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
+            _teamText.text = "Team 3";
         }
-        foreach (GameObject playerCharacter in characterManager.Team4)
+        foreach (GameObject playerCharacter in _characterManager.Team4)
         {
-            teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
-            teamText.text = "Team 4";
+            _teamText = playerCharacter.GetComponentInChildren<TMP_Text>();
+            _teamText.text = "Team 4";
         }
     }
 }

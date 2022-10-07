@@ -16,27 +16,27 @@ public class TeamDeathCheck : MonoBehaviour
 
     [SerializeField] private TMP_Text _winText;
 
-   void Start()
+   public void Init()
    {
         _gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         _characterManager = FindObjectOfType<CharacterManager>().GetComponent<CharacterManager>();
         _winText.enabled = false;
 
-        if (_characterManager.teamArray.Length == 2)
+        if (_characterManager.TeamArray.Length == 2)
         {
             _team3Dead = true;
             _team4Dead = true;
         }
-        if (_characterManager.teamArray.Length == 3)
+        if (_characterManager.TeamArray.Length == 3)
         {
             _team4Dead = true;
         }
     }
     public void CheckTeamDeath()
     {
-        for (int i = 0; i < _characterManager.teamArray.Length; i++)
+        for (int i = 0; i < _characterManager.TeamArray.Length; i++)
         {
-            bool teamDead = _characterManager.teamArray[i].TrueForAll(playerCharacter => playerCharacter.GetComponent<PlayerHP>().IsDead);
+            bool teamDead = _characterManager.TeamArray[i].TrueForAll(playerCharacter => playerCharacter.GetComponent<PlayerHP>().IsDead);
             if (teamDead)
             {
                 SetCorrectTeam(i);

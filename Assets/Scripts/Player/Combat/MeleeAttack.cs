@@ -1,13 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
+    [SerializeField] private FloatVariable _turnTimer;
     
-    private Vector3 _attackPosition;
+    [SerializeField]private Transform _attackPosition;
     [SerializeField] private float _range;
     [SerializeField]private float _damage;
+
+    private bool _canAttack;
+
+    private void Start()
+    {
+        _canAttack = true;
+    }
 
     void Update()
     {
@@ -15,15 +24,17 @@ public class MeleeAttack : MonoBehaviour
     }
     private void MeleeInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (_canAttack && Input.GetKeyDown(KeyCode.Q) && _turnTimer.Value > 0.35f)
         {
             Melee();
         }
     }
     private void Melee()
     {
-        UpdateAttackPosition();
-        Collider[] hitColliders = Physics.OverlapSphere(_attackPosition, _range - 0.2f);
+        _turnTimer.ApplyChange(-0.35f);
+        Collider[] hitColliders = Physics.OverlapSphere(_attackPosition.position, _range);
+
+        _canAttack = false;
 
         foreach (var collider in hitColliders)
         {
@@ -32,10 +43,12 @@ public class MeleeAttack : MonoBehaviour
                 collider.GetComponent<PlayerHP>().TakeDamage(_damage);
             }else{}
         }
+        Invoke(nameof(ResetAttack), 2f);
     }
-    private void UpdateAttackPosition()
+    private void ResetAttack()
     {
-        _attackPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + _range);
+        _canAttack = true;
     }
+
 }
 
