@@ -70,6 +70,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive - Change Maker Education/Desktop/FirstBuild\Assignment.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\oskar.wistedt\OneDrive - Change Maker Education\Desktop\FirstBuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Unity Projects\Assigment&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -127,7 +135,7 @@
       <workItem from="1665125613694" duration="3931000" />
       <workItem from="1665129601923" duration="11097000" />
       <workItem from="1665142050658" duration="2900000" />
-      <workItem from="1665146685977" duration="3291000" />
+      <workItem from="1665146685977" duration="3874000" />
     </task>
     <servers />
   </component>
