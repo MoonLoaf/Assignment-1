@@ -9,6 +9,7 @@ public class ActivePlayer : MonoBehaviour
     PlayerMovement _movementScript;
     PlayerCam _camScript;
     PlayerAnimation _animScript;
+    private MeleeAttack _meleeAttack;
 
     Pistol _pistol;
 
@@ -29,6 +30,7 @@ public class ActivePlayer : MonoBehaviour
         _animScript = GetComponent<PlayerAnimation>();
 
         _pistol = GetComponent<Pistol>();
+        _meleeAttack = GetComponent<MeleeAttack>();
         
         _cam = this.gameObject.GetComponentInChildren<Camera>();
 
@@ -43,6 +45,7 @@ public class ActivePlayer : MonoBehaviour
             this._animScript.enabled = false;
 
             this._pistol.enabled = false;
+            this._meleeAttack.enabled = false;
             
             _cam.enabled = false;
         }
@@ -53,6 +56,7 @@ public class ActivePlayer : MonoBehaviour
             this._animScript.enabled = true;
 
             this._pistol.enabled = true;
+            this._meleeAttack.enabled = true;
             
             _cam.enabled = true;
         }
@@ -63,6 +67,7 @@ public class ActivePlayer : MonoBehaviour
             this._animScript.enabled = false;
 
             this._pistol.enabled = false;
+            this._meleeAttack.enabled = false;
             
             _cam.enabled = true;
         }

@@ -6,9 +6,10 @@ using TMPro;
 public class PlayerHP : MonoBehaviour
 {
     private Pistol _pistol;
-    private TeamHP _teamHP;
+    private TeamDeathCheck _teamDeathCheck;
+    
     [SerializeField] private GameObject _pistolObject;
-    [SerializeField] private GameObject Cross;
+    [SerializeField] private GameObject _cross;
 
     private  float _maxHP = 100;
     private float _currentHP;
@@ -20,7 +21,7 @@ public class PlayerHP : MonoBehaviour
         IsDead = false;
         _currentHP = _maxHP;
         _pistol = GetComponent<Pistol>();
-        _teamHP = FindObjectOfType<TeamHP>().GetComponent<TeamHP>();
+        _teamDeathCheck = FindObjectOfType<TeamDeathCheck>().GetComponent<TeamDeathCheck>();
     }
     private void SetHP()
     {
@@ -46,7 +47,7 @@ public class PlayerHP : MonoBehaviour
     private void PlayerDead()
     {
         IsDead = true;
-        Instantiate(Cross, transform.position, Quaternion.identity);
+        Instantiate(_cross, transform.position, Quaternion.identity);
         Destroy(_pistolObject);
         
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
@@ -55,6 +56,7 @@ public class PlayerHP : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().enabled = false;
         gameObject.GetComponent<Pistol>().enabled = false;
         
-        _teamHP.UpdateTeamCount();
+        _teamDeathCheck.CheckTeamDeath();
+        _teamDeathCheck.CheckWin();
     }
 }

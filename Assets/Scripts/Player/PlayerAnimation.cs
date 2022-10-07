@@ -43,6 +43,22 @@ public class PlayerAnimation : MonoBehaviour
             _animator.SetBool("StandingJump", false);
         }
 
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            _animator.SetBool("IsAiming", true);
+        }
+        if (!Input.GetKey(KeyCode.Mouse1))
+        {
+            _animator.SetBool("IsAiming", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _animator.SetTrigger("Melee");
+            
+        }
+        
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && _turnTimer.Value != 0 && GameManager.InputEnabled)
         {
@@ -54,6 +70,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetBool("RunningJump", false);
     }
+    
 
 
 

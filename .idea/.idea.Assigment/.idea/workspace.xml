@@ -6,7 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="da54dead-9b24-4496-8f58-637f82e27b87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assigment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Aim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Aim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Idle 1.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Idle 1.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Euro Western SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Business_Man_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowboy_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Cowgirl_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Gunman_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Sheriff_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/Character_Woman_01 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/My Prefabs/Player Characters/PlayerUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonWestern/Prefabs/Weapons/SM_Wep_American_Bayonet_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonWestern/Prefabs/Weapons/SM_Wep_American_Bayonet_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamHP.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TeamHP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ActivePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ActivePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Pistol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHP.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,11 +40,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/TeamHP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/MeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoadingScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_FontAsset_CreationMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aad1b3a47484d63ba2b3985692d80e946a800/32/a88eca75/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,19 +69,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\UNITY\2021.3.9f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Unity Projects\Assigment&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Unity Projects\Assigment" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1468">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1468" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -101,6 +124,8 @@
       <workItem from="1664966741713" duration="3526000" />
       <workItem from="1665046723426" duration="690000" />
       <workItem from="1665051338178" duration="4102000" />
+      <workItem from="1665125613694" duration="3931000" />
+      <workItem from="1665129601923" duration="11097000" />
     </task>
     <servers />
   </component>

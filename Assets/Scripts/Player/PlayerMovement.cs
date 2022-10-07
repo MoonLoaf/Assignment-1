@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
-
     [SerializeField] private FloatVariable _turnTimer;
     
     private float _speed;
@@ -23,29 +22,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _groundDistance;
     [SerializeField] private LayerMask _groundMask;
 
-    Vector3 velocity;
+    private Vector3 velocity;
     [SerializeField]private bool _isGrounded;
-
-    //GOONS
-
-    [SerializeField] private GameObject RPG;
-    [SerializeField] private GameObject Shotgun;
-    [SerializeField] private GameObject Rifle;
-
-
-    //========================================================================================================================\\
-    private void Awake()
-    {
-    }
-
-    private void Start()
-    {
-        //SetActiveWeapon(0);
-    }
 
     private void Update()
     {
-        if (_turnTimer.Value > 0 && GameManager.InputEnabled)
+        if (_turnTimer.Value > 0 && GameManager.InputEnabled);
         {
             MovementInputs();
         }
@@ -74,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
             _actionCost = 0.1f;
         }
     }
-
     private void FixedUpdate()
     {
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
@@ -92,34 +73,5 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += _gravity * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime);
     }
-
-    /*public void SetActiveWeapon(int weaponIndex)
-    {
-        if (weaponIndex == 1)
-        {
-            RPG.gameObject.SetActive(true);
-            Shotgun.gameObject.SetActive(false);
-            Rifle.gameObject.SetActive(false);
-        }
-        else if (weaponIndex == 2)
-        {
-            Shotgun.gameObject.SetActive(true);
-            RPG.gameObject.SetActive(false);
-            Rifle.gameObject.SetActive(false);
-        }
-        else if (weaponIndex == 3)
-        {
-            Rifle.gameObject.SetActive(true);
-            Shotgun.gameObject.SetActive(false);
-            RPG.gameObject.SetActive(false);
-        }
-        else if (weaponIndex == 0)
-        {
-            Rifle.gameObject.SetActive(false);
-            Shotgun.gameObject.SetActive(false);
-            RPG.gameObject.SetActive(false);
-        }
-    }*/
-    
 }
 

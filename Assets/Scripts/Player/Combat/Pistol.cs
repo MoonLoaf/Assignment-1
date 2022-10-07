@@ -1,38 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Pistol : MonoBehaviour
 {
-    [FormerlySerializedAs("_cam")] [SerializeField] private Camera cam;
+    
+    [SerializeField] private Camera _cam;
     private RaycastHit _rayHit;
+    [SerializeField] private ParticleSystem _gunShot;
 
     [SerializeField] private FloatVariable TurnTimer;
     
     private int _maxAmmo;
     public int CurrentAmmo;
-    
-    
 
     private static float _damage;
-    
     public static float Damage { get => _damage; }
     
     private float _range;
     public bool Reloading;
     private float _reloadTime;
     private float _timeBetweenShots;
+    
+    
 
     private bool _shotReady;
+    private bool isAiming;
     
     void Awake()
     {
-        cam = GetComponentInChildren<Camera>();
-        //FindAmmoText();
+        _cam = GetComponentInChildren<Camera>();
     }
     void Start()
     {
+        
         _maxAmmo = 6;
         CurrentAmmo = _maxAmmo;
         _range = 1000;
@@ -50,9 +53,10 @@ public class Pistol : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void WeaponInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && TurnTimer.Value >= 0.1f && GameManager.InputEnabled)
+        if (isAiming && Input.GetKeyDown(KeyCode.Mouse0) && CurrentAmmo >= 1 && !Reloading && _shotReady && TurnTimer.Value >= 0.1f && GameManager.InputEnabled)
         {
             Shoot();
+            _gunShot.Play();
             _shotReady = false;
             Invoke(nameof(ResetShot), _timeBetweenShots);
         }
@@ -61,11 +65,19 @@ public class Pistol : MonoBehaviour
             Reload();
             Invoke(nameof(ReloadFinished), _reloadTime);
         }
-    }
 
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            isAiming = true;
+        }
+        else
+        {
+            isAiming = false;
+        }
+    }
     void Shoot()
     {
-        var camPosition = cam.transform;
+        var camPosition = _cam.transform;
         Physics.Raycast(camPosition.position, camPosition.forward, out _rayHit, _range);
 
         CurrentAmmo--;
@@ -78,9 +90,6 @@ public class Pistol : MonoBehaviour
                 _rayHit.collider.GetComponent<PlayerHP>().TakeDamage(Damage / _rayHit.distance);
             }
         }
-        
-        
-        
     }
     private void Reload()
     {
